@@ -1,0 +1,875 @@
+<!DOCTYPE html>
+<html lang="uz">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Откатные Ворота - Производство и монтаж</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: "Arial", sans-serif;
+        background: linear-gradient(
+            135deg,
+            rgba(20, 20, 20, 0.95),
+            rgba(40, 40, 40, 0.9)
+          ),
+          url("c9ee1e54d593c47307533c8ec7aaf2cc1628a603.png");
+        background-size: cover;
+        background-position: center;
+        background-attachment: fixed;
+        color: white;
+        min-height: 100vh;
+        margin: auto;
+        max-width: 1500px;
+        width: 100%;
+      }
+
+      .container {
+        background: transparent;
+        margin: 0 auto;
+        width: 90%;
+        padding: 0 20px;
+      }
+
+      /* Header */
+      header {
+        padding: 15px 0;
+        background: rgba(0, 0, 0, 0.0000001);
+        backdrop-filter: blur(1px);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      }
+
+      .header-content {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+      }
+
+      .company-info {
+        flex: 1;
+      }
+
+      .company-info h1 {
+        font-size: 14px;
+        margin-bottom: 8px;
+        color: #fff;
+        font-weight: normal;
+      }
+
+      .location {
+        display: flex;
+        align-items: center;
+        color: #ff4444;
+        font-size: 12px;
+        margin-bottom: 5px;
+      }
+
+      .location::before {
+        content: "📍";
+        margin-right: 8px;
+      }
+
+      .schedule {
+        display: flex;
+        align-items: center;
+        color: #ff4444;
+        font-size: 12px;
+      }
+
+      .schedule::before {
+        content: "🕐";
+        margin-right: 8px;
+      }
+
+      .contact-info {
+        text-align: right;
+      }
+
+      .phone {
+        font-size: 20px;
+        font-weight: bold;
+        color: #ff4444;
+        margin-bottom: 10px;
+        letter-spacing: 1px;
+      }
+
+      .order-btn {
+        background: linear-gradient(45deg, #ff4444, #ff6666);
+        color: white;
+        padding: 8px 20px;
+        border: none;
+        border-radius: 25px;
+        cursor: pointer;
+        font-size: 12px;
+        font-weight: bold;
+        transition: all 0.3s ease;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        box-shadow: 0 4px 15px rgba(255, 68, 68, 0.3);
+      }
+
+      .order-btn:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 8px 25px rgba(255, 68, 68, 0.5);
+        background: linear-gradient(45deg, #ff6666, #ff4444);
+      }
+
+      .social-icons {
+        display: flex;
+        gap: 12px;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .social-icons a {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 36px;
+        height: 36px;
+        background: rgba(255, 255, 255, 0.05);
+        border-radius: 50%;
+        transition: all 0.3s ease;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+      }
+
+      .social-icons a:hover {
+        transform: scale(1.15);
+        background: rgba(255, 68, 68, 0.8);
+      }
+
+      .social-icons a img {
+        width: 18px;
+        height: 18px;
+        filter: invert(1) brightness(0.9);
+        transition: filter 0.3s ease;
+      }
+
+      .social-icons a:hover img {
+        filter: invert(1) brightness(1.5);
+      }
+
+      nav {
+        background: transparent;
+        top: 0;
+        left: 0;
+        width: 100%;
+        z-index: 1000;
+      }
+
+      .nav-content {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 15px 0;
+        flex-wrap: wrap;
+      }
+
+      .nav-menu li a {
+        text-decoration: none;
+        font-weight: bold;
+      }
+
+      .nav-menu .social-icons img {
+        width: 20px;
+        height: 20px;
+        filter: brightness(0) invert(1);
+      }
+
+      .logo {
+        font-weight: bold;
+        width: 70px;
+        height: 70px;
+        font-size: 18px;
+        color: #fff;
+        transition: all 0.3s ease;
+        border-radius: 15%;
+      }
+
+      .logo:hover {
+        transform: translateY(-2px);
+        color: #ff4444;
+      }
+
+      .nav-menu {
+        display: flex;
+        list-style: none;
+        gap: 40px;
+        flex-wrap: wrap;
+      }
+
+      .nav-menu a {
+        color: white;
+        text-decoration: none;
+        font-size: 14px;
+        font-weight: 500;
+        transition: all 0.3s ease;
+        position: relative;
+        padding: 10px 0;
+        letter-spacing: 1px;
+      }
+
+      .nav-menu a:hover {
+        color: #ff4444;
+        transform: translateY(-2px);
+      }
+
+      .nav-menu a::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        width: 0;
+        height: 2px;
+        background: linear-gradient(45deg, #ff4444, #ff6666);
+        transition: all 0.3s ease;
+        transform: translateX(-50%);
+      }
+
+      .nav-menu a:hover::after {
+        width: 100%;
+      }
+
+      /* Hero Section */
+      .hero {
+        padding: 60px 0;
+        position: relative;
+        min-height: 70vh;
+        display: flex;
+        align-items: center;
+        width: 92%;
+      }
+
+      .hero-content {
+        display: flex;
+        align-items: center;
+        gap: 80px;
+        flex-wrap: wrap;
+      }
+
+      .hero-text {
+        flex: 1;
+        max-width: 550px;
+        animation: fadeInUp 1s ease-out;
+      }
+
+      .hero-text h2 {
+        font-size: 42px;
+        font-weight: bold;
+        margin-bottom: 25px;
+        line-height: 1.2;
+        text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
+        color: #fff;
+      }
+
+      .hero-text p {
+        font-size: 16px;
+        margin-bottom: 35px;
+        color: #ccc;
+        line-height: 1.6;
+      }
+
+      .calc-btn {
+        background: linear-gradient(45deg, #ff4444, #ff6666);
+        color: white;
+        padding: 18px 40px;
+        border: none;
+        border-radius: 30px;
+        cursor: pointer;
+        font-size: 14px;
+        font-weight: bold;
+        transition: all 0.3s ease;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        box-shadow: 0 8px 25px rgba(255, 68, 68, 0.4);
+      }
+
+      .calc-btn:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 15px 35px rgba(255, 68, 68, 0.6);
+        background: linear-gradient(45deg, #ff6666, #ff4444);
+      }
+
+      .hero-image {
+        flex: 1;
+        text-align: center;
+        position: relative;
+        animation: fadeInUp 1s ease-out 0.3s both;
+      }
+
+      .gate-container {
+        position: relative;
+        display: inline-block;
+        perspective: 1000px;
+      }
+
+      .gate-svg {
+        width: 100%;
+        max-width: 500px;
+        height: 280px;
+        filter: drop-shadow(0 15px 35px rgba(0, 0, 0, 0.5));
+        transition: all 0.3s ease;
+      }
+
+      .gate-svg:hover {
+        transform: scale(1.02);
+        filter: drop-shadow(0 20px 40px rgba(0, 0, 0, 0.6));
+      }
+
+      /* Bottom CTA */
+      .bottom-cta {
+        background: linear-gradient(
+          135deg,
+          rgba(255, 68, 68, 0.9),
+          rgba(255, 102, 102, 0.9)
+        );
+        padding: 25px;
+        border-radius: 50px;
+        text-align: center;
+        margin-top: 60px;
+        animation: pulse 3s infinite;
+        box-shadow: 0 10px 30px rgba(255, 68, 68, 0.3);
+      }
+
+      @keyframes pulse {
+        0% {
+          transform: scale(1);
+          box-shadow: 0 10px 30px rgba(255, 68, 68, 0.3);
+        }
+        50% {
+          transform: scale(1.02);
+          box-shadow: 0 15px 40px rgba(255, 68, 68, 0.5);
+        }
+        100% {
+          transform: scale(1);
+          box-shadow: 0 10px 30px rgba(255, 68, 68, 0.3);
+        }
+      }
+
+      .bottom-cta h3 {
+        font-size: 20px;
+        margin-bottom: 10px;
+        font-weight: bold;
+      }
+
+      .bottom-cta .highlight {
+        color: #ffff00;
+        font-weight: bold;
+        text-shadow: 0 0 10px rgba(255, 255, 0, 0.5);
+      }
+
+      /* Particle effect */
+      .particles {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        pointer-events: none;
+        z-index: -1;
+      }
+
+      .particle {
+        position: absolute;
+        background: rgba(255, 68, 68, 0.2);
+        border-radius: 50%;
+        animation: float 8s ease-in-out infinite;
+      }
+
+      @keyframes float {
+        0%,
+        100% {
+          transform: translateY(0px) rotate(0deg);
+          opacity: 0.2;
+        }
+        50% {
+          transform: translateY(-30px) rotate(180deg);
+          opacity: 0.4;
+        }
+      }
+
+      /* Sliding animation for gate */
+      .gate-panel {
+        transition: transform 0.3s ease;
+      }
+
+      .gate-svg:hover .gate-panel {
+        transform: translateX(20px);
+      }
+
+      /* Responsive Media Queries */
+      @media (max-width: 1200px) {
+        .hero-content { gap: 50px; }
+        .hero-text h2 { font-size: 36px; }
+        .hero-image .gate-svg { max-width: 450px; height: 260px; }
+      }
+
+      @media (max-width: 992px) {
+        .nav-menu { gap: 20px; }
+        .order-btn, .calc-btn { padding: 12px 30px; font-size: 13px; }
+        .hero-text h2 { font-size: 32px; }
+        .hero { padding: 40px 0; }
+      }
+
+      @media (max-width: 768px) {
+        .header-content,
+        .nav-content {
+          flex-direction: column;
+          text-align: center;
+          gap: 20px;
+        }
+        .nav-menu {
+          flex-direction: column;
+          gap: 15px;
+        }
+        .hero-content {
+          flex-direction: column;
+          gap: 40px;
+        }
+        .hero-text h2 {
+          font-size: 28px;
+        }
+        .gate-svg {
+          max-width: 400px;
+          height: auto;
+        }
+        .bottom-cta {
+          padding: 20px;
+          margin-top: 40px;
+        }
+      }
+
+      @media (max-width: 576px) {
+        header { padding: 10px 0; }
+        .phone { font-size: 18px; }
+        .company-info h1 { font-size: 13px; }
+        .location, .schedule { font-size: 11px; }
+        .order-btn, .calc-btn { padding: 10px 20px; font-size: 12px; }
+        .hero-text h2 { font-size: 24px; margin-bottom: 20px; }
+        .hero-text p { font-size: 14px; }
+        .nav-menu a { font-size: 13px; }
+        .logo { width: 60px; height: 60px; font-size: 16px; }
+        .hero { padding: 30px 0; }
+        .bottom-cta h3 { font-size: 18px; }
+      }
+
+      @keyframes fadeInUp {
+        from {
+          opacity: 0;
+          transform: translateY(50px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      .my-31 {
+        margin: auto;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="my-31">
+      <div class="particles" id="particles"></div>
+
+      <header>
+        <div class="container">
+          <div class="header-content">
+            <div class="company-info">
+              <h1>Производство и монтаж откатных ворот</h1>
+              <div class="location">
+                Санкт-Петербург, Коммендантский пр. дом 4
+              </div>
+              <div class="schedule">Ежедневно с 9:00 до 20:00</div>
+            </div>
+
+            <div class="contact-info">
+              <div class="phone">+7 (812) 716-85-77</div>
+              <button class="order-btn">Заказать звонок</button>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <nav>
+        <div class="container">
+          <div class="nav-content">
+            <div><img src="./213ADERVCdcdc.jpg" alt="logo" class="logo"></div>
+            <ul class="nav-menu">
+              <li><a href="#catalog">КАТАЛОГ</a></li>
+              <li><a href="#calculator">КАЛЬКУЛЯТОР</a></li>
+              <li><a href="#works">НАШИ РАБОТЫ</a></li>
+              <li><a href="#about">О НАС</a></li>
+              <li><a href="#contacts">КОНТАКТЫ</a></li>
+              <li class="social-icons">
+                <a href="#" title="Telegram">
+                  <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/telegram.svg" alt="Telegram" />
+                </a>
+                <a href="#" title="WhatsApp">
+                  <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/whatsapp.svg" alt="WhatsApp" />
+                </a>
+                <a href="#" title="VK">
+                  <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/vk.svg" alt="VK" />
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+
+      <main>
+        <section class="hero">
+          <div class="container">
+            <div class="hero-content">
+              <div class="hero-text">
+                <h2>ОТКАТНЫЕ ВОРОТА ДЛЯ ВАШЕГО КОМФОРТА</h2>
+                <p>
+                  Занимаемся производством и монтажом откатных ворот для частных
+                  домов, создавая комфорт и уют вашего двора
+                </p>
+                <button class="calc-btn">РАССЧИТАТЬ СТОИМОСТЬ</button>
+              </div>
+
+              <div class="hero-image">
+              <svg class="gate-svg" viewBox="0 0 500 280">
+                <!-- Background fence -->
+                <rect
+                  x="0"
+                  y="120"
+                  width="500"
+                  height="120"
+                  fill="#1a1a1a"
+                  stroke="#333"
+                  stroke-width="2"
+                />
+
+                <!-- Ground -->
+                <rect x="0" y="240" width="500" height="40" fill="#2d2d2d" />
+
+                <!-- Left support post -->
+                <rect
+                  x="20"
+                  y="80"
+                  width="25"
+                  height="160"
+                  fill="#8B4513"
+                  stroke="#A0522D"
+                  stroke-width="2"
+                />
+                <rect x="15" y="75" width="35" height="15" fill="#A0522D" />
+
+                <!-- Right support post -->
+                <rect
+                  x="455"
+                  y="80"
+                  width="25"
+                  height="160"
+                  fill="#8B4513"
+                  stroke="#A0522D"
+                  stroke-width="2"
+                />
+                <rect x="450" y="75" width="35" height="15" fill="#A0522D" />
+
+                <!-- Main gate panel -->
+                <g class="gate-panel">
+                  <!-- Gate frame -->
+                  <rect
+                    x="60"
+                    y="90"
+                    width="380"
+                    height="150"
+                    fill="#2C3E50"
+                    stroke="#34495E"
+                    stroke-width="3"
+                  />
+
+                  <!-- Vertical slats -->
+                  <rect
+                    x="70"
+                    y="100"
+                    width="12"
+                    height="130"
+                    fill="#34495E"
+                    stroke="#455A64"
+                    stroke-width="1"
+                  />
+                  <rect
+                    x="90"
+                    y="100"
+                    width="12"
+                    height="130"
+                    fill="#34495E"
+                    stroke="#455A64"
+                    stroke-width="1"
+                  />
+                  <rect
+                    x="110"
+                    y="100"
+                    width="12"
+                    height="130"
+                    fill="#34495E"
+                    stroke="#455A64"
+                    stroke-width="1"
+                  />
+                  <rect
+                    x="130"
+                    y="100"
+                    width="12"
+                    height="130"
+                    fill="#34495E"
+                    stroke="#455A64"
+                    stroke-width="1"
+                  />
+                  <rect
+                    x="150"
+                    y="100"
+                    width="12"
+                    height="130"
+                    fill="#34495E"
+                    stroke="#455A64"
+                    stroke-width="1"
+                  />
+                  <rect
+                    x="170"
+                    y="100"
+                    width="12"
+                    height="130"
+                    fill="#34495E"
+                    stroke="#455A64"
+                    stroke-width="1"
+                  />
+                  <rect
+                    x="190"
+                    y="100"
+                    width="12"
+                    height="130"
+                    fill="#34495E"
+                    stroke="#455A64"
+                    stroke-width="1"
+                  />
+                  <rect
+                    x="210"
+                    y="100"
+                    width="12"
+                    height="130"
+                    fill="#34495E"
+                    stroke="#455A64"
+                    stroke-width="1"
+                  />
+                  <rect
+                    x="230"
+                    y="100"
+                    width="12"
+                    height="130"
+                    fill="#34495E"
+                    stroke="#455A64"
+                    stroke-width="1"
+                  />
+                  <rect
+                    x="250"
+                    y="100"
+                    width="12"
+                    height="130"
+                    fill="#34495E"
+                    stroke="#455A64"
+                    stroke-width="1"
+                  />
+                  <rect
+                    x="270"
+                    y="100"
+                    width="12"
+                    height="130"
+                    fill="#34495E"
+                    stroke="#455A64"
+                    stroke-width="1"
+                  />
+                  <rect
+                    x="290"
+                    y="100"
+                    width="12"
+                    height="130"
+                    fill="#34495E"
+                    stroke="#455A64"
+                    stroke-width="1"
+                  />
+                  <rect
+                    x="310"
+                    y="100"
+                    width="12"
+                    height="130"
+                    fill="#34495E"
+                    stroke="#455A64"
+                    stroke-width="1"
+                  />
+                  <rect
+                    x="330"
+                    y="100"
+                    width="12"
+                    height="130"
+                    fill="#34495E"
+                    stroke="#455A64"
+                    stroke-width="1"
+                  />
+                  <rect
+                    x="350"
+                    y="100"
+                    width="12"
+                    height="130"
+                    fill="#34495E"
+                    stroke="#455A64"
+                    stroke-width="1"
+                  />
+                  <rect
+                    x="370"
+                    y="100"
+                    width="12"
+                    height="130"
+                    fill="#34495E"
+                    stroke="#455A64"
+                    stroke-width="1"
+                  />
+                  <rect
+                    x="390"
+                    y="100"
+                    width="12"
+                    height="130"
+                    fill="#34495E"
+                    stroke="#455A64"
+                    stroke-width="1"
+                  />
+                  <rect
+                    x="410"
+                    y="100"
+                    width="12"
+                    height="130"
+                    fill="#34495E"
+                    stroke="#455A64"
+                    stroke-width="1"
+                  />
+
+                  <!-- Horizontal supports -->
+                  <rect x="60" y="130" width="380" height="8" fill="#455A64" />
+                  <rect x="60" y="180" width="380" height="8" fill="#455A64" />
+
+                  <!-- Gate mechanism -->
+                  <rect x="50" y="245" width="400" height="8" fill="#666" />
+                  <circle cx="80" cy="249" r="6" fill="#888" />
+                  <circle cx="420" cy="249" r="6" fill="#888" />
+                </g>
+
+                <!-- Motion indicator -->
+                <g class="motion-arrow">
+                  <path
+                    d="M 10 165 L 30 155 L 30 162 L 50 162 L 50 168 L 30 168 L 30 175 Z"
+                    fill="#ff4444"
+                    opacity="0.8"
+                  />
+                  <animateTransform
+                    attributeName="transform"
+                    type="translate"
+                    values="0,0; 15,0; 0,0"
+                    dur="2s"
+                    repeatCount="indefinite"
+                  />
+                </g>
+              </svg>
+            </div>
+          </div>
+
+            <div class="bottom-cta">
+              <h3>
+                РАССЧИТАЙТЕ СТОИМОСТЬ БУДУЩИХ ВОРОТ ЗА
+                <span class="highlight">1 МИНУТУ</span>!
+              </h3>
+            </div>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <script>
+      // Particle system
+      function createParticles() {
+        const particlesContainer = document.getElementById("particles");
+        const particleCount = 40;
+
+        for (let i = 0; i < particleCount; i++) {
+          const particle = document.createElement("div");
+          particle.className = "particle";
+
+          const size = Math.random() * 3 + 1;
+          particle.style.width = size + "px";
+          particle.style.height = size + "px";
+          particle.style.left = Math.random() * 100 + "%";
+          particle.style.top = Math.random() * 100 + "%";
+          particle.style.animationDelay = Math.random() * 8 + "s";
+          particle.style.animationDuration = Math.random() * 4 + 4 + "s";
+
+          particlesContainer.appendChild(particle);
+        }
+      }
+
+      // Smooth scrolling for navigation
+      document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+        anchor.addEventListener("click", function (e) {
+          e.preventDefault();
+          const target = document.querySelector(this.getAttribute("href"));
+          if (target) {
+            target.scrollIntoView({
+              behavior: "smooth",
+            });
+          }
+        });
+      });
+
+      // Button click handlers
+      document.querySelectorAll(".order-btn, .calc-btn").forEach((button) => {
+        button.addEventListener("click", function () {
+          this.style.transform = "scale(0.95)";
+          setTimeout(() => {
+            this.style.transform = "";
+          }, 150);
+
+          // Simulate contact form
+          const phone = "+7 (812) 716-85-77";
+          alert(`Спасибо за интерес! Свяжитесь с нами по телефону: ${phone}`);
+        });
+      });
+
+      // Initialize on page load
+      window.addEventListener("load", () => {
+        createParticles();
+      });
+
+      // Parallax effect for particles
+      window.addEventListener("scroll", () => {
+        const scrolled = window.pageYOffset;
+        const particles = document.querySelectorAll(".particle");
+
+        particles.forEach((particle, index) => {
+          const speed = 0.3 + (index % 4) * 0.1;
+          particle.style.transform = `translateY(${scrolled * speed}px)`;
+        });
+      });
+
+      // Add hover effect for gate
+      const gatePanel = document.querySelector(".gate-panel");
+      const gateSvg = document.querySelector(".gate-svg");
+
+      gateSvg.addEventListener("mouseenter", () => {
+        gatePanel.style.transform = "translateX(15px)";
+      });
+
+      gateSvg.addEventListener("mouseleave", () => {
+        gatePanel.style.transform = "translateX(0)";
+      });
+    </script>
+  </body>
+</html>
